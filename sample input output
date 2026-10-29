@@ -1,0 +1,23 @@
+### Sample Input
+
+```
+Shopping Bag
+2
+499.50
+```
+
+### Sample Output
+
+```
+Before moving:
+Item: Shopping Bag
+Quantity: 2
+Price: 499.5
+
+After moving:
+Bag 1 Item:
+Bag 2 Item: Shopping Bag
+Bag 2 Quantity: 2
+Bag 2 Price: 499.5
+```
+
