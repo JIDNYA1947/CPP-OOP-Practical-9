@@ -1,22 +1,43 @@
+
 #include <iostream>
 #include <string>
 #include <utility>
 using namespace std;
 
+class ShoppingBag
+{
+public:
+    string item;
+    int quantity;
+    double price;
+
+    ShoppingBag(string name, int qty, double cost)
+    {
+        item = name;
+        quantity = qty;
+        price = cost;
+    }
+};
+
 int main()
 {
-    string person1 = "Shopping Bag";
-    string person2;
+    ShoppingBag bag1("Shopping Bag", 2, 499.50);
+    ShoppingBag bag2("", 0, 0.0);
 
     cout << "Before moving:" << endl;
-    cout << "Person 1: " << person1 << endl;
-    cout << "Person 2: " << person2 << endl;
+    cout << "Item: " << bag1.item << endl;
+    cout << "Quantity: " << bag1.quantity << endl;
+    cout << "Price: " << bag1.price << endl;
 
-    person2 = std::move(person1);
-
+    bag2.item = std::move(bag1.item);
+    bag2.quantity = std::move(bag1.quantity);
+    bag2.price = std::move(bag1.price);
     cout << "\nAfter moving:" << endl;
-    cout << "Person 1: " << person1 << endl;
-    cout << "Person 2: " << person2 << endl;
+    
+    cout << "Bag 1 Item: " << bag1.item << endl;
+    cout << "Bag 2 Item: " << bag2.item << endl;
+    cout << "Bag 2 Quantity: " << bag2.quantity << endl;
+    cout << "Bag 2 Price: " << bag2.price << endl;
 
     return 0;
 }
